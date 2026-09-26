@@ -1,10 +1,10 @@
 FROM deluan/navidrome:latest
 
-# blitz.cloud requires applications to run as a non-root user.
+USER root
+RUN apt-get update && apt-get install -y curl fuse3 \
+    && curl https://rclone.org/install.sh | bash
+
 USER 1000:1000
 
-# Navidrome's HTTP server
 EXPOSE 4533
-
-# Ask blitz.cloud to keep Navidrome's database/cache and music directory.
 VOLUME ["/data", "/music"]
