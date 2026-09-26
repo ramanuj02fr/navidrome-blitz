@@ -15,4 +15,4 @@ echo "===== Checking if mount succeeded ====="
 ls -la /music || echo "MOUNT FAILED - /music not accessible"
 mount | grep music || echo "No fuse mount found in mount table"
 
-exec /app/navidrome
+exec /navidrome
