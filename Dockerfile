@@ -1,7 +1,7 @@
 FROM deluan/navidrome:latest
 
 USER root
-RUN apt-get update && apt-get install -y curl fuse3 \
+RUN apk add --no-cache curl fuse3 unzip \
     && curl https://rclone.org/install.sh | bash
 
 COPY entrypoint.sh /entrypoint.sh
